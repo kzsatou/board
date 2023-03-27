@@ -8,7 +8,7 @@
 	<section id="form">
 		<dl class="clearfix">
 			<dt>
-				<label th:for="${#ids.next('author')}" class="required">謚慕ｨｿ閠�</label>
+				<label th:for="${#ids.next('author')}" class="required">投稿者</label>
 			</dt>
 			<dd>
 				<div>
@@ -17,7 +17,7 @@
 				</div>
 			</dd>
 			<dt>
-				<label th:for="${#ids.next('title')}" class="required">繧ｿ繧､繝医Ν</label>
+				<label th:for="${#ids.next('title')}" class="required">タイトル</label>
 			</dt>
 			<dd>
 				<div>
@@ -26,7 +26,7 @@
 				</div>
 			</dd>
 			<dt>
-				<label th:for="${#ids.next('body')}" class="required">蜀�螳ｹ</label>
+				<label th:for="${#ids.next('body')}" class="required">内容</label>
 			</dt>
 			<dd>
 				<div>
@@ -35,13 +35,14 @@
 				</div>
 			</dd>
 		</dl>
-		<button type="submit">騾∽ｿ｡</button>
+		<button type="submit">送信</button>
 	</section>
 </form>
 <section id="posts">
 	<ul>
-		<li th:each="post : ${list}" th:unless="${post.deleted}">
-			<!-- delete縺ｧ縺ｪ縺�髯舌ｊ陦ｨ遉ｺ -->
+		<!-- <li th:each="post : ${list}" th:unless="${post.deleted}"> -->
+			<!-- if delete valid show -->
+			<li th:each="post : ${list}">
 			<article class="post">
 				<ul>
 					<li>
@@ -54,8 +55,8 @@
 					<li>
 					<li>
 						<div class="buttons clearfix">
-							<a th:href="@{'edit?id={id}'(id=${post.id})}" class="edit">邱ｨ髮�</a><a
-								th:href="@{'delete?id={id}'(id=${post.id})}" class="delete">蜑企勁</a>
+							<a th:href="@{'edit?id={id}'(id=${post.id})}" class="edit">編集</a><a
+								th:href="@{'delete?id={id}'(id=${post.id})}" class="delete">削除</a>
 						</div>
 					</li>
 				</ul>
