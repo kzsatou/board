@@ -2,11 +2,11 @@ package com.example.board.service;
 
 import java.util.Optional;
 
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
 
 import com.example.board.repository.Post;
 
-@Service
+//@Service
 public interface BoardEditService {
 	/** 編集 */
 	Optional<Post> edit(String id);
